@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chune — Civil Engineer & Data Scientist</title>
+<meta name="description" content="Chune — Chune Evans Kihonji — Civil Engineer (University of Nairobi, 2026) with site inspection, materials testing and quality control experience. Kenya.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B1520'/><text x='50%25' y='68%25' font-size='56' font-family='sans-serif' font-weight='800' fill='%2322D3EE' text-anchor='middle'>C<tspan fill='%23F4622E'>.</tspan></text></svg>">
+<meta property="og:title" content="Chune Evans Kihonji — Civil Engineer &amp; Data Scientist">
+<meta property="og:description" content="Civil Engineer (University of Nairobi, 2026) with site inspection, materials testing, quality control, GIS and predictive analytics experience. Kenya.">
+<meta property="og:image" content="profile.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chune Evans Kihonji — Civil Engineer &amp; Data Scientist">
+<meta name="twitter:description" content="Civil Engineer &amp; Data Scientist portfolio showcasing structural projects, site supervision, and predictive analytics in Kenya.">
+<meta name="twitter:image" content="profile.jpg">
+<meta name="theme-color" content="#0B1520">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   RESET & ROOT
+═══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --dk: #0B1520;
+  --nv: #0D1E30;
+  --nvm: #112338;
+  --or: #F4622E;
+  --te: #22D3EE;
+  --pp: #F0EDE7;
+  --ppd: #E2DDD6;
+  --cc: #6E8299;
+  --wh: #FFFFFF;
+  --fd: 'Space Grotesk', sans-serif;
+  --fb: 'Inter', sans-serif;
+  --fm: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fb);
+  background: var(--dk);
+  color: var(--pp);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ═══════════════════════════════════════
+   CUSTOM CURSOR
+═══════════════════════════════════════ */
+#cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--te);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, opacity .2s;
+  mix-blend-mode: screen;
+}
+#cursor-ring {
+  position: fixed;
+  width: 32px; height: 32px;
+  border: 1.5px solid rgba(34,211,238,.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .22s, height .22s;
+}
+body.hovering #cursor { width: 18px; height: 18px; }
+body.hovering #cursor-ring { width: 46px; height: 46px; }
+/* Touch device cursor reset */
+@media (hover: none) or (pointer: coarse) {
+  body { cursor: auto !important; }
+  #cursor, #cursor-ring { display: none !important; }
+}
+
+
+/* ═══════════════════════════════════════
+   PAGE SYSTEM
+═══════════════════════════════════════ */
+.pg { display: none; min-height: 100vh; }
+.pg.on { display: block; }
+
+/* ═══════════════════════════════════════
+   PAGE TRANSITION WIPE
+═══════════════════════════════════════ */
+#wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: linear-gradient(135deg, var(--or), var(--te));
+  transform: translateX(-101%);
+  transition: transform .38s cubic-bezier(.77,0,.175,1);
+}
+#wipe.in  { transform: translateX(0); }
+#wipe.out { transform: translateX(101%); }
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 2000;
+  padding: 0 32px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(11,21,32,.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(110,130,153,.15);
+  transition: border-bottom-color .4s;
+}
+.nlogo {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: .14em;
+  color: var(--wh);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.nlogo:hover { opacity: .78; }
+.nlogo .o { color: var(--or); }
+.nlogo .t { color: var(--te); }
+
+.nlinks {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  position: relative;
+}
+.nlinks a, .nlinks > li > button {
+  font-family: var(--fb);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--cc);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 13px;
+  border-radius: 5px;
+  transition: color .2s;
+  letter-spacing: .02em;
+}
+.nlinks a:hover, .nlinks > li > button:hover,
+.nlinks a.on { color: var(--wh); }
+
+.nav-glow {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--or), var(--te));
+  border-radius: 2px;
+  pointer-events: none;
+  transition: left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* Dropdown */
+.ndrop { position: relative; }
+.ddm {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--nvm);
+  border: 1px solid rgba(110,130,153,.2);
+  border-radius: 10px;
+  padding: 8px 6px;
+  min-width: 240px;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 1000;
+  box-shadow: 0 14px 36px rgba(0,0,0,.5);
+  animation: ddmfade .18s ease;
+  margin-top: 6px;
+}
+/* Invisible hover bridge between button and dropdown */
+.ddm::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+@keyframes ddmfade {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.ndrop:hover .ddm,
+.ndrop:focus-within .ddm,
+.ndrop.open .ddm { display: flex; }
+.ddm button {
+  font-family: var(--fb);
+  font-size: .8rem;
+  color: var(--cc);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 9px 14px;
+  border-radius: 6px;
+  text-align: left;
+  transition: color .15s, background .15s;
+  width: 100%;
+}
+.ddm button:hover { color: var(--wh); background: rgba(255,255,255,.06); }
+
+/* Mobile nav toggle */
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--pp);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 90px 32px 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--dk);
+}
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: orbdrift 9s ease-in-out infinite;
+}
+@keyframes orbdrift {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(22px, -16px); }
+  66%       { transform: translate(-16px, 22px); }
+}
+/* Hero text */
+.heyebrow {
+  font-family: var(--fm);
+  font-size: .7rem;
+  color: var(--te);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: slideup .6s .3s forwards;
+}
+.hname {
+  font-family: var(--fd);
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  color: var(--wh);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.hname-inner {
+  display: block;
+  transform: translateY(105%);
+  animation: namerev .72s .1s cubic-bezier(.22,1,.36,1) forwards;
+}
+.htitle {
+  font-family: var(--fd);
+  font-size: .9rem;
+  color: var(--cc);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  opacity: 0;
+  animation: slideup .6s .45s forwards;
+}
+.htitle .sep { color: var(--or); margin: 0 7px; }
+.htagline {
+  font-size: 1.05rem;
+  color: var(--pp);
+  opacity: 0;
+  max-width: 430px;
+  line-height: 1.76;
+  margin-bottom: 36px;
+  min-height: 3.5em;
+  animation: slideup .6s .6s forwards;
+}
+.hactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  animation: slideup .6s .75s forwards;
+}
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes namerev {
+  from { transform: translateY(105%); }
+  to   { transform: translateY(0); }
+}
+
+/* ── HERO BACKGROUND PORTRAIT (RIGHT SIDE) ── */
+.hero-bg-portrait {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  max-width: 820px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  opacity: 0.52;
+  filter: contrast(1.12) brightness(0.92) saturate(0.95);
+  transform: scale(1.02);
+}
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--dk) 0%, rgba(11,21,32,.85) 20%, rgba(11,21,32,.35) 55%, transparent 85%),
+    linear-gradient(to top, var(--dk) 0%, rgba(11,21,32,.9) 14%, transparent 40%),
+    linear-gradient(to bottom, var(--dk) 0%, rgba(11,21,32,.8) 8%, transparent 22%),
+    radial-gradient(circle at 70% 35%, rgba(34,211,238,.12), transparent 55%),
+    radial-gradient(circle at 85% 75%, rgba(244,98,46,.08), transparent 50%);
+}
+
+/* Foreground stage on right side */
+.hphoto-stage {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.hhero-card {
+  background: rgba(17,35,56,.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(110,130,153,.25);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 48px rgba(0,0,0,.45);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.hhero-card:hover {
+  border-color: rgba(34,211,238,.45);
+  box-shadow: 0 24px 54px rgba(0,0,0,.55), 0 0 28px rgba(34,211,238,.12);
+}
+.hhero-badge {
+  font-family: var(--fm);
+  font-size: .66rem;
+  letter-spacing: .12em;
+  color: var(--te);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hhero-title {
+  font-family: var(--fd);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--wh);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.hhero-sub {
+  font-size: .84rem;
+  color: var(--ppd);
+  margin-bottom: 18px;
+}
+.hhero-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(110,130,153,.15);
+  border-bottom: 1px solid rgba(110,130,153,.15);
+  margin-bottom: 14px;
+}
+.hhero-item {
+  display: flex;
+  flex-direction: column;
+}
+.hhero-val {
+  font-family: var(--fd);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--te);
+}
+.hhero-lbl {
+  font-family: var(--fm);
+  font-size: .62rem;
+  color: var(--cc);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.hhero-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .74rem;
+  color: var(--pp);
+  line-height: 1.4;
+}
+.hhero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .4; transform: scale(1.3); }
+}
+
+/* Photo frame */
+.hphoto {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: slideup .7s .35s forwards;
+}
+.pframe {
+  width: 320px;
+  height: 380px;
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pframe::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: conic-gradient(from 0deg, var(--or), var(--te), var(--or));
+  animation: spin 4s linear infinite;
+  z-index: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.pframe-inner {
+  position: absolute;
+  inset: 2px;
+  border-radius: 16px;
+  background: var(--nvm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+.pframe-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  display: block;
+}
+.pavatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--te));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fd);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.pbadge {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(11,21,32,.96), transparent);
+  font-family: var(--fm);
+  font-size: .65rem;
+  color: var(--te);
+  letter-spacing: .1em;
+  z-index: 2;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+/* Floating tags */
+.ftag {
+  position: absolute;
+  background: rgba(13,30,48,.92);
+  border: 1px solid rgba(110,130,153,.25);
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-family: var(--fm);
+  font-size: .64rem;
+  color: var(--pp);
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  z-index: 3;
+}
+.ftag-o { border-left: 2px solid var(--or); animation: float 3.2s ease-in-out infinite; }
+.ftag-t { border-left: 2px solid var(--te); animation: float 3.8s ease-in-out infinite .5s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+
+/* ═══════════════════════════════════════
+   SHARED SECTION STYLES
+═══════════════════════════════════════ */
+section { padding: 92px 32px; }
+.si { max-width: 1160px; margin: 0 auto; }
+.sl {
+  font-family: var(--fm);
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 10px;
+}
+.sl.t { color: var(--te); }
+.sh {
+  font-family: var(--fd);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--wh);
+  line-height: 1.12;
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+}
+.sb { font-size: .96rem; color: var(--cc); max-width: 580px; line-height: 1.76; }
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.rev {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s cubic-bezier(.4,0,.2,1),
+              transform .65s cubic-bezier(.4,0,.2,1);
+}
+.rev.show { opacity: 1; transform: translateY(0); }
+.rev-d1 { transition-delay: .07s; }
+.rev-d2 { transition-delay: .14s; }
+.rev-d3 { transition-delay: .21s; }
+.rev-d4 { transition-delay: .28s; }
+.rev-d5 { transition-delay: .35s; }
+.rev-d6 { transition-delay: .42s; }
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 24px;
+  border-radius: 7px;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .18s, box-shadow .18s, background .18s;
+  text-decoration: none;
+  border: none;
+  letter-spacing: .02em;
+  font-family: var(--fb);
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.1);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn:hover::after  { opacity: 1; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,.3); }
+.btn:active { transform: translateY(0); }
+.bo { background: var(--or); color: #fff; }
+.bt { background: transparent; color: var(--te); border: 1.5px solid var(--te); }
+.bg { background: transparent; color: var(--cc); border: 1.5px solid rgba(110,130,153,.3); }
+.bg:hover { color: var(--wh); border-color: rgba(255,255,255,.3); }
+
+/* ═══════════════════════════════════════
+   ABOUT SECTION
+═══════════════════════════════════════ */
+.abs { background: var(--pp); color: var(--dk); }
+.abs .sl { color: var(--or); }
+.abs .sh { color: var(--dk); }
+.abg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  margin-top: 52px;
+  align-items: start;
+}
+.abt p { color: #334155; line-height: 1.84; margin-bottom: 18px; font-size: .92rem; }
+.atags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 26px; }
+.atag {
+  background: var(--ppd);
+  color: #475569;
+  font-size: .74rem;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 100px;
+  border: 1px solid #D1C9BF;
+  transition: background .2s, color .2s;
+}
+.atag:hover { background: #334155; color: #fff; }
+.absb {
+  padding: 28px;
+  background: var(--dk);
+  border-radius: 14px;
+  color: var(--pp);
+}
+.absb h4 {
+  font-family: var(--fd);
+  font-size: .77rem;
+  font-weight: 600;
+  color: var(--cc);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.ei { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(110,130,153,.12); }
+.ei:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.ey { font-family: var(--fm); font-size: .64rem; color: var(--te); margin-bottom: 3px; }
+.ed { font-family: var(--fd); font-size: .9rem; font-weight: 600; color: var(--wh); margin-bottom: 2px; }
+.es { font-size: .82rem; color: var(--cc); }
+
+/* ═══════════════════════════════════════
+   STATS
+═══════════════════════════════════════ */
+.sts { background: var(--nv); }
+.stg {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 52px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(110,130,153,.08);
+}
+.stc {
+  background: var(--nv);
+  padding: 38px 28px;
+  text-align: center;
+  transition: background .25s;
+}
+.stc:hover { background: var(--nvm); }
+.stn {
+  font-family: var(--fd);
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 7px;
+  transition: transform .22s;
+}
+.stc:hover .stn { transform: scale(1.08); }
+.stl { font-size: .78rem; color: var(--cc); letter-spacing: .04em; }
+.sor .stn { color: var(--or); }
+.ste .stn { color: var(--te); }
+.swh .stn { color: var(--wh); }
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════ */
+.tss { background: var(--pp); }
+.tss .sh { color: var(--dk); }
+.tss .sl { color: var(--or); }
+.tsg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+.tc {
+  background: var(--wh);
+  border-radius: 14px;
+  padding: 28px;
+  border: 1px solid var(--ppd);
+  transition: transform .28s, box-shadow .28s;
+}
+.tc:hover { transform: translateY(-6px); box-shadow: 0 24px 52px rgba(0,0,0,.1); }
+.tq { font-size: 2.2rem; color: var(--or); font-family: Georgia, serif; line-height: 1; margin-bottom: 12px; opacity: .3; }
+.tt { font-size: .85rem; color: #475569; line-height: 1.74; margin-bottom: 20px; font-style: italic; }
+.ta { display: flex; align-items: center; gap: 10px; }
+.av {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--te));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .78rem; color: #fff; flex-shrink: 0;
+}
+.an { font-weight: 600; font-size: .82rem; color: var(--dk); }
+.ar { font-size: .72rem; color: #94A3B8; }
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+.cts { background: var(--dk); }
+.ctg { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-top: 52px; }
+.cti h3 { font-family: var(--fd); font-size: 1.4rem; font-weight: 600; color: var(--wh); margin-bottom: 10px; }
+.cti p { color: var(--cc); font-size: .9rem; line-height: 1.76; margin-bottom: 28px; }
+.cls { display: flex; flex-direction: column; gap: 10px; }
+.cl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--pp);
+  text-decoration: none;
+  font-size: .84rem;
+  padding: 12px 15px;
+  border-radius: 9px;
+  border: 1px solid rgba(110,130,153,.14);
+  transition: border-color .22s, background .22s, transform .22s;
+}
+.cl:hover { border-color: var(--te); background: rgba(34,211,238,.06); transform: translateX(5px); }
+.cli { width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .9rem; flex-shrink: 0; }
+.clf { font-weight: 600; font-size: .82rem; }
+.cld { font-size: .74rem; color: var(--cc); }
+.ctf { display: flex; flex-direction: column; gap: 14px; }
+.fr { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { display: flex; flex-direction: column; gap: 5px; }
+.fg label { font-size: .74rem; font-weight: 500; color: var(--cc); letter-spacing: .04em; }
+.fg input, .fg textarea {
+  background: var(--nvm);
+  border: 1px solid rgba(110,130,153,.18);
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: var(--pp);
+  font-family: var(--fb);
+  font-size: .86rem;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+  width: 100%;
+}
+.fg input:focus, .fg textarea:focus {
+  border-color: var(--te);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12);
+}
+.fg textarea { resize: vertical; min-height: 110px; }
+
+/* ═══════════════════════════════════════
+   ENGINEERING / DS HERO VARIANTS
+═══════════════════════════════════════ */
+.ehero {
+  min-height: 58vh;
+  padding: 120px 32px 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--dk);
+}
+.ehero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244,98,46,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,98,46,.04) 1px, transparent 1px);
+  background-size: 54px 54px;
+}
+.dshero {
+  min-height: 58vh;
+  padding: 120px 32px 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--dk);
+}
+.dshero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(34,211,238,.055) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* ═══════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════ */
+.skg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 13px;
+  margin-top: 40px;
+}
+.skc {
+  background: var(--nvm);
+  border-radius: 11px;
+  padding: 18px;
+  border: 1px solid rgba(110,130,153,.14);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  position: relative;
+  overflow: hidden;
+}
+.skc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(244,98,46,.06), transparent);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.skc:hover { border-color: var(--or); transform: translateY(-3px); box-shadow: 0 14px 36px rgba(244,98,46,.1); }
+.skc:hover::before { opacity: 1; }
+.skc.d::before { background: linear-gradient(135deg, rgba(34,211,238,.06), transparent); }
+.skc.d:hover { border-color: var(--te); box-shadow: 0 14px 36px rgba(34,211,238,.1); }
+.ski { font-size: 1.4rem; margin-bottom: 9px; }
+.skn { font-family: var(--fd); font-size: .85rem; font-weight: 600; color: var(--wh); margin-bottom: 3px; }
+.skl { font-family: var(--fm); font-size: .63rem; color: var(--cc); }
+.sbt { height: 3px; background: rgba(110,130,153,.16); border-radius: 2px; margin-top: 9px; overflow: hidden; }
+.sbf { height: 100%; border-radius: 2px; background: var(--or); width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+.skc.d .sbf { background: var(--te); }
+.skc.sbr .sbf { width: var(--sw, 80%); }
+.sglbl {
+  font-family: var(--fm);
+  font-size: .65rem;
+  letter-spacing: .15em;
+  color: #556778;
+  margin-top: 30px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   PROJECT CARDS
+═══════════════════════════════════════ */
+.prg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.prc {
+  background: var(--nvm);
+  border-radius: 13px;
+  border: 1px solid rgba(110,130,153,.14);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .25s, box-shadow .25s;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+.prc:hover { border-color: var(--or); box-shadow: 0 22px 52px rgba(0,0,0,.3); }
+.prc.d:hover { border-color: var(--te); box-shadow: 0 22px 52px rgba(34,211,238,.08); }
+.prt {
+  height: 158px;
+  background: linear-gradient(135deg, var(--nv), var(--nvm));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s;
+}
+.prc:hover .prt { transform: scale(1.05); }
+.prt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244,98,46,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,98,46,.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.prc.d .prt::after {
+  background-image:
+    linear-gradient(rgba(34,211,238,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,.05) 1px, transparent 1px);
+}
+.prb { padding: 20px; }
+.prc:hover .prb { transform: translateY(-2px); }
+.prcat { font-family: var(--fm); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--or); margin-bottom: 7px; }
+.prc.d .prcat { color: var(--te); }
+.prtl { font-family: var(--fd); font-size: 1rem; font-weight: 600; color: var(--wh); margin-bottom: 7px; }
+.prd { font-size: .82rem; color: var(--cc); line-height: 1.62; margin-bottom: 13px; }
+.pts { display: flex; flex-wrap: wrap; gap: 5px; }
+.pt { background: rgba(110,130,153,.1); color: var(--cc); font-size: .64rem; font-weight: 500; padding: 3px 8px; border-radius: 4px; font-family: var(--fm); }
+.bar2 { display: flex; gap: 8px; margin-top: 14px; }
+
+/* ═══════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════ */
+.glg { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 13px; margin-top: 40px; }
+.gli {
+  border-radius: 9px;
+  aspect-ratio: 4/3;
+  background: var(--nvm);
+  border: 1px solid rgba(110,130,153,.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 1.9rem;
+  cursor: pointer;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+  position: relative;
+  overflow: hidden;
+}
+.gli::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(244,98,46,.08), rgba(34,211,238,.08));
+  opacity: 0;
+  transition: opacity .25s;
+}
+.gli:hover { transform: scale(1.04); border-color: rgba(244,98,46,.3); box-shadow: 0 10px 28px rgba(0,0,0,.24); }
+.gli:hover::after { opacity: 1; }
+.gli p { font-size: .72rem; color: var(--cc); text-align: center; padding: 0 10px; position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════
+   GITHUB REPOS
+═══════════════════════════════════════ */
+.rpg { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 13px; margin-top: 40px; }
+.rpc {
+  background: var(--nvm);
+  border: 1px solid rgba(110,130,153,.16);
+  border-radius: 11px;
+  padding: 18px;
+  cursor: pointer;
+  transition: border-color .22s, transform .22s;
+}
+.rpc:hover { border-color: var(--te); transform: translateY(-2px); }
+.rpn { font-family: var(--fm); font-size: .84rem; color: var(--te); margin-bottom: 7px; }
+.rpd { font-size: .8rem; color: var(--cc); line-height: 1.54; margin-bottom: 13px; }
+.rpm { display: flex; gap: 14px; font-size: .72rem; color: var(--cc); font-family: var(--fm); }
+
+/* ═══════════════════════════════════════
+   BLOG
+═══════════════════════════════════════ */
+.bflt { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 40px; margin-bottom: 32px; }
+.fb {
+  background: transparent;
+  border: 1px solid rgba(110,130,153,.18);
+  color: var(--cc);
+  font-size: .75rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background .22s, border-color .22s, color .22s;
+  font-family: var(--fb);
+}
+.fb:hover, .fb.on { background: var(--or); border-color: var(--or); color: #fff; }
+.blg { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 18px; }
+.bc {
+  background: var(--nvm);
+  border-radius: 13px;
+  border: 1px solid rgba(110,130,153,.13);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .28s, border-color .25s, box-shadow .28s;
+}
+.bc:hover { transform: translateY(-5px); border-color: rgba(110,130,153,.3); box-shadow: 0 18px 42px rgba(0,0,0,.25); }
+.bth { height: 116px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--nv), var(--nvm)); }
+.bb { padding: 17px; }
+.bcat { font-family: var(--fm); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 7px; }
+.ce { color: var(--or); }
+.cd { color: var(--te); }
+.cth { color: #A78BFA; }
+.btl { font-family: var(--fd); font-size: .9rem; font-weight: 600; color: var(--wh); line-height: 1.38; margin-bottom: 7px; }
+.bex { font-size: .8rem; color: var(--cc); line-height: 1.62; margin-bottom: 13px; }
+.bmt { display: flex; gap: 10px; font-size: .72rem; color: var(--cc); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer { background: #050F18; padding: 34px 32px; border-top: 1px solid rgba(110,130,153,.09); }
+.fi { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.fb2 { font-family: var(--fd); font-weight: 700; font-size: .95rem; color: var(--wh); }
+.ft2 { font-size: .78rem; color: var(--cc); }
+
+/* ═══════════════════════════════════════
+   SCROLL TO TOP
+═══════════════════════════════════════ */
+.stt {
+  position: fixed;
+  bottom: 22px; right: 22px;
+  width: 42px; height: 42px;
+  background: var(--or);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; color: #fff;
+  opacity: 0;
+  transition: opacity .28s, transform .28s;
+  z-index: 500;
+}
+.stt.vis { opacity: 1; }
+.stt:hover { transform: scale(1.1); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-inner, .abg, .ctg { grid-template-columns: 1fr; gap: 36px; }
+  .hero-bg-portrait {
+    width: 100%;
+    max-width: 100%;
+    opacity: 0.32;
+  }
+  .hphoto {
+    display: flex;
+    justify-content: center;
+    order: 2;
+    margin-top: 20px;
+  }
+  .hphoto-stage { max-width: 320px; }
+  .ftag { font-size: .62rem; padding: 6px 10px; }
+  .ftag-o { top: -10px; left: -14px; }
+  .ftag-t { bottom: 28px; right: -14px; }
+  .tsg { grid-template-columns: 1fr 1fr; }
+  .stg { grid-template-columns: repeat(2, 1fr); }
+  .fr { grid-template-columns: 1fr; }
+  nav { padding: 0 20px; }
+  .nav-mobile-btn { display: block; }
+  .nlinks { display: none; }
+  .nlinks.open { display: flex; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0; background: rgba(11,21,32,.97); backdrop-filter: blur(20px); padding: 12px; border-bottom: 1px solid rgba(110,130,153,.15); }
+  .nlinks.open li { width: 100%; }
+  .nlinks.open a, .nlinks.open button { width: 100%; text-align: left; padding: 10px 14px; }
+  .ddm { position: static; transform: none; width: 100%; animation: none; margin-top: 4px; }
+  .ndrop:hover .ddm { display: none; }
+  .ndrop.open .ddm { display: flex; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 84px 20px 48px; }
+  .pframe { width: 230px; height: 280px; }
+  .ftag-o { top: -8px; left: -6px; }
+  .ftag-t { bottom: 20px; right: -6px; }
+  .hname { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+  .tsg { grid-template-columns: 1fr; }
+  section { padding: 56px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div id="wipe"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav id="mnav">
+  <span class="nlogo" onclick="go('home')">
+    <span class="o">C</span>HUNE<span class="t">.</span>
+  </span>
+  <ul class="nlinks" id="nlinks">
+    <li><a onclick="go('home')" data-p="home">Home</a></li>
+    <li><a onclick="go('eng')" data-p="eng">Engineer</a></li>
+    <li><a onclick="go('ds')" data-p="ds">Data Scientist</a></li>
+    <li class="ndrop">
+      <button onclick="toggleProjectsDrop(event)" aria-haspopup="true" aria-expanded="false">Projects ▾</button>
+      <div class="ddm">
+        <button onclick="go('cp')">⚙️&nbsp; Civil Engineering Projects</button>
+        <button onclick="go('dp')">📊&nbsp; Data Science Projects</button>
+      </div>
+    </li>
+    <li><a onclick="go('blog')" data-p="blog">Blog</a></li>
+    <div class="nav-glow" id="navglow"></div>
+  </ul>
+  <button class="nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ═══════════════════════════ HOME ═══════════════════════════ -->
+<div class="pg on" id="pg-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Hero Right Background Portrait -->
+    <div class="hero-bg-portrait" id="hero-bg-portrait">
+      <img src="profile.jpg" alt="Chune Evans Kihonji" class="hero-bg-img" loading="eager">
+      <div class="hero-bg-gradient"></div>
+    </div>
+
+    <div style="position:absolute;inset:0;pointer-events:none">
+      <div class="orb" style="width:400px;height:400px;background:rgba(244,98,46,.06);top:8%;left:3%;animation-duration:10s"></div>
+      <div class="orb" style="width:320px;height:320px;background:rgba(34,211,238,.06);bottom:12%;right:6%;animation-duration:12s;animation-delay:-4s"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hcontent">
+        <div class="heyebrow">// University of Nairobi · Kenya</div>
+        <h1 class="hname"><span class="hname-inner">Chune.</span></h1>
+        <div class="htitle">Civil Engineer<span class="sep">×</span>Data Scientist</div>
+        <p class="htagline" id="htagline"></p>
+        <div class="hactions">
+          <button class="btn bo" onclick="go('eng')">Explore Engineering →</button>
+          <button class="btn bt" onclick="go('ds')">Explore Data Science →</button>
+          <a class="btn bg" id="cv-download-btn" href="Chune_Evans_CV.pdf" download="Chune_Evans_CV.pdf" target="_blank">↓ Download CV</a>
+        </div>
+      </div>
+      <div class="hphoto">
+        <div class="hphoto-stage">
+          <div class="ftag ftag-o" style="top:-16px;left:-20px">🏗️ BSc Civil Engineering · UoN</div>
+          <div class="hhero-card">
+            <div class="hhero-badge">// Engineering &amp; Analytics</div>
+            <div class="hhero-title">Evans Kihonji</div>
+            <div class="hhero-sub">Civil Engineer &amp; Data Scientist</div>
+            <div class="hhero-row">
+              <div class="hhero-item">
+                <span class="hhero-val">UoN '26</span>
+                <span class="hhero-lbl">Graduating</span>
+              </div>
+              <div class="hhero-item">
+                <span class="hhero-val">6+</span>
+                <span class="hhero-lbl">Field Projects</span>
+              </div>
+              <div class="hhero-item">
+                <span class="hhero-val">84%</span>
+                <span class="hhero-lbl">ML Precision</span>
+              </div>
+            </div>
+            <div class="hhero-status">
+              <span class="hhero-dot"></span> Open to graduate engineering &amp; analytics roles
+            </div>
+          </div>
+          <div class="ftag ftag-t" style="bottom:-16px;right:-14px">📊 Predictive ML &amp; Spatial GIS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="abs">
+    <div class="si">
+      <div class="sl rev">About Me</div>
+      <h2 class="sh rev rev-d1">Engineer. Analyst. Builder.</h2>
+      <div class="abg">
+        <div class="abt rev rev-d2">
+          <p>I'm Chune Evans Kihonji, a Civil Engineer completing my BSc in Civil Engineering at the <strong>University of Nairobi</strong>, graduating in October 2026. Through attachments with Kakamega Municipality and Kenya Railways Corporation, I've gained hands-on experience in site inspections, materials testing, quality control and project documentation.</p>
+          <p>I've worked alongside architects, surveyors and structural engineers on road, drainage, sewage, street lighting and building projects, checking work against drawings and specifications and preparing inspection reports. I read structural and architectural drawings comfortably and work to quality and safety standards.</p>
+          <p>Beyond the site, I've led student bodies at UoN, including ACES, ESA and the Environmental Club, and I'm building a second discipline in data science and analytics. I'm based in Kiminini, Trans Nzoia County, hold a valid driving licence and am available for immediate resumption.</p>
+          <div class="atags">
+            <span class="atag">Site Inspection</span>
+            <span class="atag">Quality Control</span>
+            <span class="atag">Materials Testing</span>
+            <span class="atag">Drawing Interpretation</span>
+            <span class="atag">Safety Compliance</span>
+            <span class="atag">AutoCAD</span>
+            <span class="atag">Civil 3D</span>
+            <span class="atag">Revit</span>
+          </div>
+        </div>
+        <div class="absb rev rev-d3">
+          <h4>Education &amp; Background</h4>
+          <div class="ei">
+            <div class="ey">Oct 2021 – Oct 2026</div>
+            <div class="ed">BSc Civil Engineering</div>
+            <div class="es">University of Nairobi</div>
+          </div>
+          <div class="ei">
+            <div class="ey">2017 – 2021</div>
+            <div class="ed">Kenya Certificate of Secondary Education</div>
+            <div class="es">Maseno School</div>
+          </div>
+          <div class="ei">
+            <div class="ey">Self-directed</div>
+            <div class="ed">Data Science &amp; Analytics</div>
+            <div class="es">Python · SQL · ML · Visualization</div>
+          </div>
+          <div class="ei">
+            <div class="ey">Professional Tools</div>
+            <div class="ed">CAD, BIM &amp; Planning</div>
+            <div class="es">AutoCAD · Civil 3D · Revit · MS Project</div>
+          </div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(110,130,153,.12)">
+            <div style="font-size:.65rem;color:var(--cc);margin-bottom:6px;font-family:var(--fm);letter-spacing:.08em">CURRENTLY OPEN TO</div>
+            <div style="color:var(--te);font-size:.88rem;font-weight:500">Graduate engineer roles · Immediate start</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="sts">
+    <div class="si">
+      <div class="sl t rev">By the Numbers</div>
+      <h2 class="sh rev rev-d1">Experience at a glance</h2>
+      <div class="stg rev rev-d2">
+        <div class="stc sor"><div class="stn" data-t="2">0</div><div class="stl">Industry Attachments</div></div>
+        <div class="stc ste"><div class="stn" data-t="4">0</div><div class="stl">KISIP Project Types</div></div>
+        <div class="stc swh"><div class="stn" data-t="4">0</div><div class="stl">Student Leadership Roles</div></div>
+        <div class="stc sor"><div class="stn" data-t="5">0</div><div class="stl">Years of Civil Engineering Study</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="tss">
+    <div class="si">
+      <div class="sl rev">Experience</div>
+      <h2 class="sh rev rev-d1">Where I've worked</h2>
+      <div class="tsg">
+        <div class="tc rev rev-d2">
+          <div class="tq">"</div>
+          <p class="tt">Materials Testing and Research Division. Assisted the County Structural Engineer with site supervision and inspections, verified compliance with drawings and specifications, monitored quality, material usage and progress, and prepared inspection reports. Took part in KISIP road, drainage, sewage and street lighting projects.</p>
+          <div class="ta"><div class="av">KM</div><div><div class="an">Engineering Attaché</div><div class="ar">Kakamega Municipality · Jun – Aug 2025</div></div></div>
+        </div>
+        <div class="tc rev rev-d3">
+          <div class="tq">"</div>
+          <p class="tt">Conducted site inspections, assisted in pre-tender assessments and reporting, and gained exposure to take-off preparation and construction documentation.</p>
+          <div class="ta"><div class="av">KR</div><div><div class="an">Engineering Attaché</div><div class="ar">Kenya Railways Corporation · Jul – Sep 2023</div></div></div>
+        </div>
+        <div class="tc rev rev-d4">
+          <div class="tq">"</div>
+          <p class="tt">First Year Civil Engineering Representative and Publicity Secretary (ACES-UoN), Academic Secretary (ESA-UoN) and Publicity Secretary (UoN Environmental Club).</p>
+          <div class="ta"><div class="av">UoN</div><div><div class="an">Student Leadership</div><div class="ar">University of Nairobi · 2021 – 2024</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="cts">
+    <div class="si">
+      <div class="sl t rev">Let's Connect</div>
+      <h2 class="sh rev rev-d1">Get in touch</h2>
+      <div class="ctg">
+        <div class="cti rev rev-d2">
+          <h3>Open to collaboration</h3>
+          <p>Open to graduate engineering roles and collaborations. Based in Kiminini, Trans Nzoia County (about 20 minutes from Kitale) and available for immediate resumption.</p>
+          <div class="cls">
+            <a href="mailto:evanschune4@gmail.com" class="cl">
+              <div class="cli" style="background:rgba(244,98,46,.1)">📧</div>
+              <div><div class="clf">Email</div><div class="cld">evanschune4@gmail.com</div></div>
+            </a>
+            <a href="tel:+254799620275" class="cl">
+              <div class="cli" style="background:rgba(34,211,238,.1)">📞</div>
+              <div><div class="clf">Phone</div><div class="cld">+254 799 620275</div></div>
+            </a>
+            <a href="https://wa.me/254799620275" target="_blank" rel="noopener" class="cl">
+              <div class="cli" style="background:rgba(16,185,129,.1)">💬</div>
+              <div><div class="clf">WhatsApp</div><div class="cld">+254 799 620275</div></div>
+            </a>
+            <a href="https://linkedin.com/in/ChuneEvans" target="_blank" rel="noopener" class="cl">
+              <div class="cli" style="background:rgba(34,211,238,.1)">💼</div>
+              <div><div class="clf">LinkedIn</div><div class="cld">@ChuneEvans</div></div>
+            </a>
+            <a href="https://github.com/Eltons-gt" target="_blank" rel="noopener" class="cl">
+              <div class="cli" style="background:rgba(110,130,153,.1)">⌨️</div>
+              <div><div class="clf">GitHub</div><div class="cld">github.com/Eltons-gt</div></div>
+            </a>
+          </div>
+        </div>
+        <div class="ctf rev rev-d3">
+          <div class="fr">
+            <div class="fg"><label>Name</label><input type="text" id="cf-name" placeholder="Your name"></div>
+            <div class="fg"><label>Email</label><input type="email" id="cf-email" placeholder="your@email.com"></div>
+          </div>
+          <div class="fg"><label>Subject</label><input type="text" id="cf-subject" placeholder="What's this about?"></div>
+          <div class="fg"><label>Message</label><textarea id="cf-msg" placeholder="Tell me about your project or opportunity..."></textarea></div>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:4px">
+            <button class="btn bo" id="cf-send-btn" type="button" onclick="sendMsg()">Send Message →</button>
+            <button class="btn bg" type="button" onclick="copyEmail(this)" style="font-size:.78rem;cursor:pointer">📋 Copy Email</button>
+          </div>
+          <div id="cf-status" style="display:none;margin-top:12px;font-size:.8rem;font-family:var(--fm);padding:10px 14px;border-radius:8px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fi">
+      <div class="fb2">CHUNE<span style="color:var(--te)">.</span></div>
+      <div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════ ENGINEER ═══════════════════════════ -->
+<div class="pg" id="pg-eng">
+  <section class="ehero">
+    <div class="si">
+      <div class="sl rev">Discipline One</div>
+      <h1 class="hname rev rev-d1" style="font-size:clamp(2.4rem,6vw,4.4rem)">
+        <span class="hname-inner" style="display:inline-block;transform:none">Civil Engineer</span>
+      </h1>
+      <p class="sb rev rev-d2" style="margin-top:14px;font-size:1rem">
+        A civil engineering graduate with hands-on experience in site inspections, materials testing, quality control and project documentation, working alongside architects, surveyors and structural engineers on road, drainage, sewage and building projects.
+      </p>
+    </div>
+  </section>
+
+  <section style="background:var(--pp);padding:80px 32px">
+    <div class="si">
+      <div class="sl rev">Technical Skills</div>
+      <h2 class="sh rev rev-d1" style="color:var(--dk)">Engineering toolkit</h2>
+      <p class="sb rev rev-d2" style="color:#475569">From the site to the drawing board: inspection, quality control and the digital tools that support them.</p>
+      <div class="sglbl rev rev-d2">Core Competencies</div>
+      <div class="skg">
+        <div class="skc rev rev-d1"><div class="ski">📐</div><div class="skn">Drawing Interpretation</div><div class="skl">Structural · Architectural</div><div class="sbt"><div class="sbf" style="--sw:90%"></div></div></div>
+        <div class="skc rev rev-d2"><div class="ski">✅</div><div class="skn">Quality Control</div><div class="skl">Monitoring · Compliance Checks</div><div class="sbt"><div class="sbf" style="--sw:85%"></div></div></div>
+        <div class="skc rev rev-d3"><div class="ski">🧱</div><div class="skn">Material Management</div><div class="skl">Usage · Testing · Records</div><div class="sbt"><div class="sbf" style="--sw:80%"></div></div></div>
+        <div class="skc rev rev-d4"><div class="ski">🦺</div><div class="skn">Safety Compliance</div><div class="skl">Site Safety Practices</div><div class="sbt"><div class="sbf" style="--sw:80%"></div></div></div>
+        <div class="skc rev rev-d5"><div class="ski">📋</div><div class="skn">Site Inspection &amp; Reporting</div><div class="skl">Inspection Reports · Documentation</div><div class="sbt"><div class="sbf" style="--sw:85%"></div></div></div>
+      </div>
+      <div class="sglbl rev">Software &amp; Tools</div>
+      <div class="skg">
+        <div class="skc rev rev-d1"><div class="ski">📐</div><div class="skn">AutoCAD</div><div class="skl">2D Drafting · Detailing</div><div class="sbt"><div class="sbf" style="--sw:92%"></div></div></div>
+        <div class="skc rev rev-d2"><div class="ski">🛤️</div><div class="skn">Civil 3D</div><div class="skl">Road Design · Grading · Survey</div><div class="sbt"><div class="sbf" style="--sw:80%"></div></div></div>
+        <div class="skc rev rev-d3"><div class="ski">🏗️</div><div class="skn">Revit</div><div class="skl">BIM Modelling · Coordination</div><div class="sbt"><div class="sbf" style="--sw:74%"></div></div></div>
+        <div class="skc rev rev-d4"><div class="ski">🗓️</div><div class="skn">MS Project</div><div class="skl">Programming · Scheduling</div><div class="sbt"><div class="sbf" style="--sw:70%"></div></div></div>
+        <div class="skc rev rev-d5"><div class="ski">📊</div><div class="skn">MS Excel</div><div class="skl">Calculations · Quantities</div><div class="sbt"><div class="sbf" style="--sw:92%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--dk);padding:80px 32px">
+    <div class="si">
+      <div class="sl rev">Featured Work</div>
+      <h2 class="sh rev rev-d1">Project experience</h2>
+      <div class="prg">
+        <div class="prc rev rev-d1" onclick="go('cp')"><div class="prt">🛣️</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Road Works</div><div class="prd">Took part in KISIP road projects, inspecting works on site and checking compliance with drawings and specifications.</div><div class="pts"><span class="pt">KISIP</span><span class="pt">Site Inspection</span><span class="pt">Compliance</span></div></div></div>
+        <div class="prc rev rev-d2" onclick="go('cp')"><div class="prt">💧</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Drainage &amp; Sewerage</div><div class="prd">Worked on drainage and sewage projects, assisting the County Structural Engineer and monitoring quality and progress.</div><div class="pts"><span class="pt">Drainage</span><span class="pt">Sewerage</span><span class="pt">Progress Monitoring</span></div></div></div>
+        <div class="prc rev rev-d3" onclick="go('cp')"><div class="prt">💡</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Street Lighting</div><div class="prd">Participated in KISIP street lighting works, supporting supervision and project documentation.</div><div class="pts"><span class="pt">KISIP</span><span class="pt">Supervision</span><span class="pt">Documentation</span></div></div></div>
+        <div class="prc rev rev-d4" onclick="go('cp')"><div class="prt">🧪</div><div class="prb"><div class="prcat">Kakamega Municipality</div><div class="prtl">Materials Testing &amp; Research</div><div class="prd">Placed in the Materials Testing and Research Division, monitoring material usage and construction quality.</div><div class="pts"><span class="pt">Materials Testing</span><span class="pt">Quality Control</span><span class="pt">Research</span></div></div></div>
+      </div>
+      <div style="text-align:center;margin-top:34px" class="rev">
+        <button class="btn bo" onclick="go('cp')">View All Project Experience →</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--nv);padding:80px 32px">
+    <div class="si">
+      <div class="sl rev">Gallery</div>
+      <h2 class="sh rev rev-d1">In the field &amp; lab</h2>
+      <div class="glg">
+        <div class="gli rev rev-d1"><span>🏗️</span><p>Site inspection</p></div>
+        <div class="gli rev rev-d2"><span>🧱</span><p>Quality monitoring</p></div>
+        <div class="gli rev rev-d3"><span>🔬</span><p>Materials testing</p></div>
+        <div class="gli rev rev-d4"><span>📐</span><p>Drawing review</p></div>
+        <div class="gli rev rev-d5"><span>🛣️</span><p>KISIP road works</p></div>
+        <div class="gli rev rev-d6"><span>🧪</span><p>Inspection reports</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="fi"><div class="fb2">CHUNE<span style="color:var(--te)">.</span></div><div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div></div></footer>
+</div>
+
+<!-- ═══════════════════════════ DATA SCIENTIST ═══════════════════════════ -->
+<div class="pg" id="pg-ds">
+  <section class="dshero">
+    <div class="si">
+      <div class="sl t rev">Discipline Two</div>
+      <h1 class="hname rev rev-d1" style="font-size:clamp(2.4rem,6vw,4.4rem)">
+        <span class="hname-inner" style="display:inline-block;transform:none">Data Scientist</span>
+      </h1>
+      <p class="sb rev rev-d2" style="margin-top:14px;font-size:1rem">
+        I extract meaning from messy datasets. Predictive models, interactive dashboards, and automation pipelines — built to solve infrastructure, transport, and development problems that matter in Africa.
+      </p>
+    </div>
+  </section>
+
+  <section style="background:var(--dk);padding:80px 32px">
+    <div class="si">
+      <div class="sl t rev">Technical Skills</div>
+      <h2 class="sh rev rev-d1">Data science toolkit</h2>
+      <div class="skg" style="margin-top:40px">
+        <div class="skc d rev rev-d1"><div class="ski">🐍</div><div class="skn">Python</div><div class="skl">pandas · numpy · scikit-learn</div><div class="sbt"><div class="sbf" style="--sw:92%"></div></div></div>
+        <div class="skc d rev rev-d2"><div class="ski">🗄️</div><div class="skn">SQL</div><div class="skl">PostgreSQL · MySQL · modelling</div><div class="sbt"><div class="sbf" style="--sw:86%"></div></div></div>
+        <div class="skc d rev rev-d3"><div class="ski">📊</div><div class="skn">Power BI</div><div class="skl">DAX · reports · dashboards</div><div class="sbt"><div class="sbf" style="--sw:86%"></div></div></div>
+        <div class="skc d rev rev-d4"><div class="ski">📈</div><div class="skn">Tableau</div><div class="skl">Visual analytics · storytelling</div><div class="sbt"><div class="sbf" style="--sw:80%"></div></div></div>
+        <div class="skc d rev rev-d5"><div class="ski">🤖</div><div class="skn">Machine Learning</div><div class="skl">Classification · Regression</div><div class="sbt"><div class="sbf" style="--sw:80%"></div></div></div>
+        <div class="skc d rev rev-d6"><div class="ski">🎨</div><div class="skn">Data Visualization</div><div class="skl">seaborn · plotly · matplotlib</div><div class="sbt"><div class="sbf" style="--sw:86%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--nv);padding:80px 32px">
+    <div class="si">
+      <div class="sl t rev">Featured Work</div>
+      <h2 class="sh rev rev-d1">Data projects</h2>
+      <div class="prg">
+        <div class="prc d rev rev-d1" onclick="go('dp')"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">🚦</div><div class="prb"><div class="prcat">Transport Analytics</div><div class="prtl">Traffic Analysis — Nairobi CBD</div><div class="prd">Temporal analysis of counts from 8 Nairobi junctions. Peak hour scoring and Tableau dashboard.</div><div class="pts"><span class="pt">Python</span><span class="pt">pandas</span><span class="pt">Tableau</span></div></div></div>
+        <div class="prc d rev rev-d2" onclick="go('dp')"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">⚠️</div><div class="prb"><div class="prcat">Machine Learning</div><div class="prtl">Accident Prediction Model</div><div class="prd">Random forest (84% accuracy) on NTSA data. Predicts high-risk sections by time, weather, road class.</div><div class="pts"><span class="pt">scikit-learn</span><span class="pt">SHAP</span></div></div></div>
+        <div class="prc d rev rev-d3" onclick="go('dp')"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">💹</div><div class="prb"><div class="prcat">Dashboard / BI</div><div class="prtl">Construction Cost Dashboard</div><div class="prd">Power BI dashboard tracking material costs and budget variance across 6 active sites.</div><div class="pts"><span class="pt">Power BI</span><span class="pt">DAX</span><span class="pt">SQL</span></div></div></div>
+        <div class="prc d rev rev-d4" onclick="go('dp')"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">🌍</div><div class="prb"><div class="prcat">Climate Analytics</div><div class="prtl">Kenya Rainfall &amp; Flood Risk</div><div class="prd">30-year rainfall trend analysis. Flood risk zones mapped with GeoPandas for infrastructure planning.</div><div class="pts"><span class="pt">Python</span><span class="pt">GeoPandas</span><span class="pt">GIS</span></div></div></div>
+      </div>
+      <div style="text-align:center;margin-top:34px" class="rev">
+        <button class="btn bt" onclick="go('dp')">View All Data Projects →</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--dk);padding:80px 32px">
+    <div class="si">
+      <div class="sl t rev">Open Source</div>
+      <h2 class="sh rev rev-d1">GitHub repositories</h2>
+      <p class="sb rev rev-d2">Latest public work — notebooks, scripts, and engineering tools.</p>
+      <div class="rpg">
+        <div class="rpc rev rev-d1"><div class="rpn">📂 traffic-analysis-nairobi</div><div class="rpd">Python notebooks for analysing traffic count data from Nairobi CBD junctions. EDA, visualisations, time-series analysis.</div><div class="rpm"><span>🐍 Python</span><span>⭐ 12</span><span>🍴 3</span></div></div>
+        <div class="rpc rev rev-d2"><div class="rpn">📂 accident-prediction-model</div><div class="rpd">ML pipeline for predicting road accident risk using NTSA data. Random forest with SHAP feature importance.</div><div class="rpm"><span>🐍 Python</span><span>⭐ 24</span><span>🍴 7</span></div></div>
+        <div class="rpc rev rev-d3"><div class="rpn">📂 civil-calc-tools</div><div class="rpd">Python tools for civil engineering calculations — beam design, bearing capacity, concrete mix design.</div><div class="rpm"><span>🐍 Python</span><span>⭐ 18</span><span>🍴 5</span></div></div>
+        <div class="rpc rev rev-d4"><div class="rpn">📂 kenya-climate-analysis</div><div class="rpd">30-year rainfall trend analysis and flood risk mapping for infrastructure planning using GeoPandas.</div><div class="rpm"><span>🐍 Python</span><span>⭐ 9</span><span>🍴 2</span></div></div>
+      </div>
+      <div style="margin-top:26px" class="rev">
+        <a href="https://github.com/Eltons-gt" target="_blank" rel="noopener" class="btn bg">View GitHub Profile →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="fi"><div class="fb2">CHUNE<span style="color:var(--te)">.</span></div><div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div></div></footer>
+</div>
+
+<!-- ═══════════════════════════ CIVIL PROJECTS ═══════════════════════════ -->
+<div class="pg" id="pg-cp">
+  <section style="padding:120px 32px 60px;background:var(--dk)">
+    <div class="si">
+      <div class="sl rev">Project Library</div>
+      <h1 class="hname rev rev-d1" style="font-size:clamp(2rem,5vw,3.4rem)">
+        <span class="hname-inner" style="display:inline-block;transform:none">Civil Engineering Projects</span>
+      </h1>
+      <p class="sb rev rev-d2" style="margin-top:14px">Hands-on project exposure from my engineering attachments: road, drainage, sewage, street lighting, materials testing and rail.</p>
+      <div class="prg" style="margin-top:52px">
+        <div class="prc rev rev-d1" style="cursor:default"><div class="prt">🛣️</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Road Works</div><div class="prd">Took part in KISIP road projects, inspecting works on site and checking compliance with drawings and specifications.</div><div class="pts"><span class="pt">KISIP</span><span class="pt">Site Inspection</span><span class="pt">Compliance</span></div></div></div>
+        <div class="prc rev rev-d2" style="cursor:default"><div class="prt">💧</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Drainage &amp; Sewerage</div><div class="prd">Worked on drainage and sewage projects, assisting the County Structural Engineer and monitoring quality and progress.</div><div class="pts"><span class="pt">Drainage</span><span class="pt">Sewerage</span><span class="pt">Progress Monitoring</span></div></div></div>
+        <div class="prc rev rev-d3" style="cursor:default"><div class="prt">💡</div><div class="prb"><div class="prcat">KISIP · Kakamega Municipality</div><div class="prtl">Street Lighting</div><div class="prd">Participated in KISIP street lighting works, supporting supervision and project documentation.</div><div class="pts"><span class="pt">KISIP</span><span class="pt">Supervision</span><span class="pt">Documentation</span></div></div></div>
+        <div class="prc rev rev-d4" style="cursor:default"><div class="prt">🧪</div><div class="prb"><div class="prcat">Kakamega Municipality</div><div class="prtl">Materials Testing &amp; Research</div><div class="prd">Placed in the Materials Testing and Research Division, monitoring material usage and construction quality.</div><div class="pts"><span class="pt">Materials Testing</span><span class="pt">Quality Control</span><span class="pt">Research</span></div></div></div>
+        <div class="prc rev rev-d5" style="cursor:default"><div class="prt">🚆</div><div class="prb"><div class="prcat">Kenya Railways Corporation</div><div class="prtl">Pre-tender Assessments</div><div class="prd">Assisted in pre-tender assessments and reporting, with exposure to take-off preparation and construction documentation.</div><div class="pts"><span class="pt">Pre-tender</span><span class="pt">Take-off</span><span class="pt">Reporting</span></div></div></div>
+        <div class="prc rev rev-d6" style="cursor:default"><div class="prt">📋</div><div class="prb"><div class="prcat">Kakamega Municipality</div><div class="prtl">Inspection Reports &amp; Documentation</div><div class="prd">Prepared inspection reports and project documentation, with working knowledge of county documentation requirements.</div><div class="pts"><span class="pt">Inspection Reports</span><span class="pt">Records</span><span class="pt">Documentation</span></div></div></div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="fi"><div class="fb2">CHUNE<span style="color:var(--te)">.</span></div><div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div></div></footer>
+</div>
+
+<!-- ═══════════════════════════ DATA PROJECTS ═══════════════════════════ -->
+<div class="pg" id="pg-dp">
+  <section style="padding:120px 32px 60px;background:var(--dk)">
+    <div class="si">
+      <div class="sl t rev">Project Library</div>
+      <h1 class="hname rev rev-d1" style="font-size:clamp(2rem,5vw,3.4rem)">
+        <span class="hname-inner" style="display:inline-block;transform:none">Data Science Projects</span>
+      </h1>
+      <p class="sb rev rev-d2" style="margin-top:14px">Analytics, machine learning, and data engineering — focused on infrastructure, transport, and development challenges in Kenya and Africa.</p>
+      <div class="prg" style="margin-top:52px">
+        <div class="prc d rev rev-d1" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">🚦</div><div class="prb"><div class="prcat">Transport Analytics</div><div class="prtl">Traffic Data Analysis — Nairobi CBD</div><div class="prd">EDA and temporal analysis of traffic counts from 8 Nairobi junctions. Peak hour analysis, congestion scoring, and Tableau dashboard.</div><div class="pts"><span class="pt">Python</span><span class="pt">pandas</span><span class="pt">seaborn</span><span class="pt">Tableau</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">GitHub →</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Dashboard</button></div></div></div>
+        <div class="prc d rev rev-d2" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">⚠️</div><div class="prb"><div class="prcat">Machine Learning</div><div class="prtl">Road Accident Prediction Model</div><div class="prd">Random forest classifier with 84% accuracy trained on NTSA records. Predicts high-risk locations by time, weather, and road class with SHAP explanations.</div><div class="pts"><span class="pt">scikit-learn</span><span class="pt">Random Forest</span><span class="pt">SHAP</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">GitHub →</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Notebook</button></div></div></div>
+        <div class="prc d rev rev-d3" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">💹</div><div class="prb"><div class="prcat">Dashboard / BI</div><div class="prtl">Construction Cost Dashboard</div><div class="prd">Multi-page Power BI dashboard tracking material costs, labour rates, and budget variance across 6 active construction sites in Nairobi.</div><div class="pts"><span class="pt">Power BI</span><span class="pt">DAX</span><span class="pt">SQL Server</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">View Demo</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Screenshots</button></div></div></div>
+        <div class="prc d rev rev-d4" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">🌍</div><div class="prb"><div class="prcat">Climate Analytics</div><div class="prtl">Kenya Rainfall &amp; Flood Risk Analysis</div><div class="prd">30-year rainfall trend analysis identifying seasonal pattern shifts. Flood risk zones mapped with GeoPandas and Folium for infrastructure planning.</div><div class="pts"><span class="pt">Python</span><span class="pt">GeoPandas</span><span class="pt">Folium</span><span class="pt">GIS</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">GitHub →</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Report</button></div></div></div>
+        <div class="prc d rev rev-d5" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">🏛️</div><div class="prb"><div class="prcat">Asset Management</div><div class="prtl">Road Asset Condition Analysis</div><div class="prd">Multi-criteria decision model using Python and SQL to prioritise road maintenance interventions from a dataset of 1,200 road sections.</div><div class="pts"><span class="pt">Python</span><span class="pt">SQL</span><span class="pt">MCDA</span><span class="pt">plotly</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">GitHub →</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Dashboard</button></div></div></div>
+        <div class="prc d rev rev-d6" style="cursor:default"><div class="prt" style="background:linear-gradient(135deg,var(--nv),var(--nvm))">📱</div><div class="prb"><div class="prcat">Automation</div><div class="prtl">Site Report Automation Tool</div><div class="prd">Python tool that auto-generates geotechnical site investigation reports from lab CSV exports — formatted Word docs with charts and tables.</div><div class="pts"><span class="pt">Python</span><span class="pt">python-docx</span><span class="pt">pandas</span></div><div class="bar2"><button class="btn bt" style="padding:8px 15px;font-size:.76rem">GitHub →</button><button class="btn bg" style="padding:8px 15px;font-size:.76rem">Demo</button></div></div></div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="fi"><div class="fb2">CHUNE<span style="color:var(--te)">.</span></div><div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div></div></footer>
+</div>
+
+<!-- ═══════════════════════════ BLOG ═══════════════════════════ -->
+<div class="pg" id="pg-blog">
+  <section style="padding:120px 32px 60px;background:var(--dk)">
+    <div class="si">
+      <div class="sl rev">Writing</div>
+      <h1 class="hname rev rev-d1" style="font-size:clamp(2rem,5vw,3.4rem)">
+        <span class="hname-inner" style="display:inline-block;transform:none">The Blog</span>
+      </h1>
+      <p class="sb rev rev-d2" style="margin-top:12px">Engineering, data science, African development, and the ideas that connect them. Written for engineers, analysts, and curious thinkers.</p>
+      <div class="bflt rev rev-d2" id="bflt">
+        <button class="fb on" onclick="filt('all',this)">All</button>
+        <button class="fb" onclick="filt('eng',this)">Engineering</button>
+        <button class="fb" onclick="filt('data',this)">Data Science</button>
+        <button class="fb" onclick="filt('concrete',this)">Concrete Tech</button>
+        <button class="fb" onclick="filt('geo',this)">Geotechnical</button>
+        <button class="fb" onclick="filt('transport',this)">Transportation</button>
+        <button class="fb" onclick="filt('python',this)">Python</button>
+        <button class="fb" onclick="filt('ml',this)">Machine Learning</button>
+        <button class="fb" onclick="filt('africa',this)">Africa &amp; Dev</button>
+        <button class="fb" onclick="filt('nuclear',this)">Nuclear Energy</button>
+        <button class="fb" onclick="filt('leadership',this)">Leadership</button>
+        <button class="fb" onclick="filt('thoughts',this)">Thoughts</button>
+      </div>
+      <div class="blg" id="blg"></div>
+    </div>
+  </section>
+  <footer><div class="fi"><div class="fb2">CHUNE<span style="color:var(--te)">.</span></div><div class="ft2">© 2026 Chune Evans Kihonji · Civil Engineer &amp; Data Scientist · Kenya</div></div></footer>
+</div>
+
+<button class="stt" id="stt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+
+<!-- ═══════════════════════════════════════
+   JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+/* ── CURSOR ── */
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px';
+  cur.style.top  = my + 'px';
+});
+(function lerpCursor() {
+  rx += (mx - rx) * .13;
+  ry += (my - ry) * .13;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(lerpCursor);
+})();
+const hoverEls = 'button,.btn,.prc,.bc,.rpc,.gli,.tc,.cl,.skc,.atag,.fb,.nlogo,.nlinks a';
+document.querySelectorAll(hoverEls).forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+});
+
+/* ── CANVAS HERO ── */
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, nodes = [];
+function resizeCanvas() {
+  W = canvas.width  = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+}
+function initNodes() {
+  nodes = [];
+  const n = Math.min(Math.floor(W * H / 8000), 80);
+  for (let i = 0; i < n; i++) {
+    nodes.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .38,
+      vy: (Math.random() - .5) * .38,
+      r:  Math.random() * 1.5 + .5
+    });
+  }
+}
+function drawCanvas() {
+  ctx.clearRect(0, 0, W, H);
+  nodes.forEach(n => {
+    n.x += n.vx; n.y += n.vy;
+    if (n.x < 0 || n.x > W) n.vx *= -1;
+    if (n.y < 0 || n.y > H) n.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(34,211,238,.55)';
+    ctx.fill();
+  });
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const d  = Math.sqrt(dx*dx + dy*dy);
+      if (d < 130) {
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.strokeStyle = `rgba(34,211,238,${.18 * (1 - d/130)})`;
+        ctx.lineWidth = .6;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawCanvas);
+}
+resizeCanvas(); initNodes(); drawCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); initNodes(); });
+
+/* ── CONTACT FORM & CLIPBOARD ── */
+function copyEmail(btn) {
+  const email = 'evanschune4@gmail.com';
+  navigator.clipboard.writeText(email).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 2200);
+  }).catch(() => {
+    prompt('Copy email address:', email);
+  });
+}
+async function sendMsg() {
+  const v = id => ((document.getElementById(id) || {}).value || '').trim();
+  const name = v('cf-name');
+  const email = v('cf-email');
+  const subject = v('cf-subject') || 'Portfolio Inquiry';
+  const msg = v('cf-msg');
+  const status = document.getElementById('cf-status');
+  const sendBtn = document.getElementById('cf-send-btn') || document.querySelector('.ctf button.bo');
+
+  if (!name || !msg) {
+    if (status) {
+      status.style.display = 'block';
+      status.style.background = 'rgba(244,98,46,.15)';
+      status.style.color = 'var(--or)';
+      status.style.border = '1px solid var(--or)';
+      status.textContent = '⚠ Please fill in your name and message before sending.';
+    }
+    return;
+  }
+
+  // Visual sending state
+  if (sendBtn) {
+    sendBtn.disabled = true;
+    sendBtn.dataset.origText = sendBtn.textContent;
+    sendBtn.textContent = 'Sending...';
+  }
+  if (status) {
+    status.style.display = 'block';
+    status.style.background = 'rgba(34,211,238,.12)';
+    status.style.color = 'var(--te)';
+    status.style.border = '1px solid var(--te)';
+    status.textContent = '⏳ Sending your message...';
+  }
+
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/evanschune4@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email || 'Not provided',
+        _subject: `[Portfolio] ${subject} - from ${name}`,
+        message: msg
+      })
+    });
+
+    if (res.ok) {
+      if (status) {
+        status.style.background = 'rgba(16,185,129,.15)';
+        status.style.color = '#34D399';
+        status.style.border = '1px solid #10B981';
+        status.textContent = '✓ Message sent successfully! Evans will get back to you shortly.';
+      }
+      ['cf-name', 'cf-email', 'cf-subject', 'cf-msg'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+      if (sendBtn) sendBtn.textContent = '✓ Sent!';
+      setTimeout(() => {
+        if (sendBtn) {
+          sendBtn.disabled = false;
+          sendBtn.textContent = sendBtn.dataset.origText || 'Send Message →';
+        }
+      }, 4000);
+      return;
+    }
+    throw new Error('Submission endpoint response not ok');
+  } catch (err) {
+    // Fallback to mailto if offline or blocked
+    if (status) {
+      status.style.background = 'rgba(34,211,238,.12)';
+      status.style.color = 'var(--te)';
+      status.style.border = '1px solid var(--te)';
+      status.textContent = '✓ Opening your email client to complete sending...';
+    }
+    const body = msg + '\n\n— ' + name + (email ? ' (' + email + ')' : '');
+    window.location.href = 'mailto:evanschune4@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    if (sendBtn) {
+      sendBtn.disabled = false;
+      sendBtn.textContent = sendBtn.dataset.origText || 'Send Message →';
+    }
+  }
+}
+
+/* ── TYPEWRITER ── */
+const TL = 'Civil engineering graduate with hands-on site, materials-testing and quality-control experience, and a data-driven mindset.';
+let ti = 0, tyTimer = null;
+function type() {
+  const el = document.getElementById('htagline');
+  if (!el) return;
+  if (ti <= TL.length) {
+    el.textContent = TL.slice(0, ti);
+    ti++;
+    tyTimer = setTimeout(type, ti === 1 ? 750 : 24);
+  }
+}
+function startTypewriter() {
+  clearTimeout(tyTimer);
+  ti = 0;
+  setTimeout(type, 900);
+}
+startTypewriter();
+
+/* ── PAGE TRANSITIONS ── */
+const wipe = document.getElementById('wipe');
+let transitioning = false;
+function go(p) {
+  if (transitioning) return;
+  const nlinks = document.getElementById('nlinks');
+  if (nlinks && nlinks.classList.contains('open')) {
+    nlinks.classList.remove('open');
+  }
+  const nd = document.querySelector('.ndrop');
+  if (nd) {
+    nd.classList.remove('open');
+    const btn = nd.querySelector('button');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+  transitioning = true;
+  wipe.className = 'in';
+  setTimeout(() => {
+    document.querySelectorAll('.pg').forEach(x => x.classList.remove('on'));
+    const el = document.getElementById('pg-' + p);
+    if (el) el.classList.add('on');
+    window.scrollTo(0, 0);
+    setupPage(p);
+    wipe.className = 'out';
+    setTimeout(() => { wipe.className = ''; transitioning = false; }, 420);
+    if (p === 'home') startTypewriter();
+  }, 360);
+}
+
+function setupPage(p) {
+  /* Update nav active state */
+  document.querySelectorAll('.nlinks a[data-p]').forEach(a => {
+    a.classList.toggle('on', a.dataset.p === p);
+  });
+  /* Update accent bar colour */
+  const nb = document.getElementById('mnav');
+  if (p === 'eng' || p === 'cp')  nb.style.borderBottomColor = 'rgba(244,98,46,.25)';
+  else if (p === 'ds' || p === 'dp') nb.style.borderBottomColor = 'rgba(34,211,238,.25)';
+  else nb.style.borderBottomColor = 'rgba(110,130,153,.15)';
+  /* Trigger scroll reveal for new page */
+  setTimeout(initReveal, 80);
+  /* Update nav glow */
+  setTimeout(updateNavGlow, 100);
+  /* Blog */
+  if (p === 'blog') renderBlog('all');
+}
+
+/* ── NAV GLOW INDICATOR ── */
+function updateNavGlow() {
+  const active = document.querySelector('.nlinks a.on');
+  const glow   = document.getElementById('navglow');
+  const list   = document.getElementById('nlinks');
+  if (active && glow && list) {
+    const lr = list.getBoundingClientRect();
+    const ar = active.getBoundingClientRect();
+    glow.style.left  = (ar.left - lr.left) + 'px';
+    glow.style.width = ar.width + 'px';
+  }
+}
+
+/* ── MOBILE NAV ── */
+function toggleMobileNav() {
+  document.getElementById('nlinks').classList.toggle('open');
+}
+
+/* ── PROJECTS DROPDOWN TOGGLE ── */
+function toggleProjectsDrop(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const nd = document.querySelector('.ndrop');
+  if (nd) {
+    const isOpen = nd.classList.toggle('open');
+    const btn = nd.querySelector('button');
+    if (btn) btn.setAttribute('aria-expanded', isOpen);
+  }
+}
+document.addEventListener('click', e => {
+  const nd = document.querySelector('.ndrop');
+  if (nd && !nd.contains(e.target)) {
+    nd.classList.remove('open');
+    const btn = nd.querySelector('button');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('show');
+    /* Animate skill bars when revealed */
+    if (e.target.classList.contains('skc')) {
+      e.target.classList.add('sbr');
+    }
+  });
+}, { threshold: .12 });
+
+function initReveal() {
+  document.querySelectorAll('.rev').forEach(el => {
+    revObs.observe(el);
+  });
+}
+initReveal();
+
+/* ── STAT COUNTERS ── */
+const stObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    document.querySelectorAll('[data-t]').forEach(el => {
+      const t = +el.dataset.t;
+      let c = 0;
+      const dur = 1500, steps = 60, inc = t / steps;
+      const tm = setInterval(() => {
+        c = Math.min(c + inc, t);
+        el.textContent = Math.round(c);
+        if (c >= t) { clearInterval(tm); el.textContent = t; }
+      }, dur / steps);
+    });
+    stObs.disconnect();
+  });
+}, { threshold: .3 });
+const sc = document.querySelector('.sts');
+if (sc) stObs.observe(sc);
+
+/* ── 3D CARD TILT ── */
+function addTilt(selector) {
+  document.querySelectorAll(selector).forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - .5;
+      const y = (e.clientY - r.top)  / r.height - .5;
+      card.style.transform = `perspective(720px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateZ(8px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+addTilt('.prc');
+addTilt('.hhero-card');
+addTilt('.tc');
+
+/* ── SCROLL TO TOP ── */
+window.addEventListener('scroll', () => {
+  const s = document.getElementById('stt');
+  if (window.scrollY > 360) s.classList.add('vis');
+  else s.classList.remove('vis');
+});
+
+/* ── BLOG DATA ── */
+const posts = [
+  { title:'Why every civil engineer needs to learn Python', ex:'Python isn\'t just for software engineers — I use it daily for structural design, data cleaning, and report automation.', cat:'python', cl:'cd', lb:'Python', th:'🐍', dt:'Jun 2025', rt:'7 min' },
+  { title:'Understanding soil bearing capacity: a practical guide', ex:'From site investigation to foundation design — how to interpret soil test data and avoid common mistakes.', cat:'geo', cl:'ce', lb:'Geotechnical', th:'🪨', dt:'May 2025', rt:'9 min' },
+  { title:'Nairobi\'s infrastructure problem is a data problem', ex:'Why good data collection is the missing link in Kenya\'s infrastructure development strategy.', cat:'africa', cl:'cth', lb:'Africa & Dev', th:'🏙️', dt:'May 2025', rt:'6 min' },
+  { title:'Concrete mix design: getting C30 right every time', ex:'Step-by-step guide to designing a reliable C30 mix, from water-cement ratio to cube testing acceptance.', cat:'concrete', cl:'ce', lb:'Concrete Tech', th:'🧱', dt:'Apr 2025', rt:'11 min' },
+  { title:'Building a road accident prediction model with scikit-learn', ex:'How I built a random forest classifier using NTSA accident data to identify high-risk road sections.', cat:'ml', cl:'cd', lb:'Machine Learning', th:'⚠️', dt:'Apr 2025', rt:'14 min' },
+  { title:'Should Africa embrace nuclear energy?', ex:'The case for nuclear power in Africa\'s energy mix — safety, cost, and the continent\'s unique development context.', cat:'nuclear', cl:'cth', lb:'Nuclear Energy', th:'⚛️', dt:'Mar 2025', rt:'10 min' },
+  { title:'Power BI for engineers: building your first dashboard', ex:'A beginner\'s guide for civil engineers — from data import to interactive reports in Power BI.', cat:'data', cl:'cd', lb:'Data Science', th:'📊', dt:'Mar 2025', rt:'8 min' },
+  { title:'Highway design fundamentals: horizontal alignment', ex:'Geometric design principles — sight distance, superelevation, and transition curves explained clearly.', cat:'transport', cl:'ce', lb:'Transportation', th:'🛣️', dt:'Feb 2025', rt:'12 min' },
+  { title:'Engineering leadership: what construction sites teach you', ex:'Management and leadership lessons from site supervision that no classroom can give you.', cat:'leadership', cl:'cth', lb:'Leadership', th:'👷', dt:'Feb 2025', rt:'5 min' },
+  { title:'What Africa\'s infrastructure gap really means', ex:'Beyond the numbers — what the deficit means for ordinary people and why closing it matters now.', cat:'africa', cl:'cth', lb:'Africa & Dev', th:'🌍', dt:'Jan 2025', rt:'8 min' },
+  { title:'Data visualisation: Power BI vs Tableau for engineers', ex:'An honest comparison of the two most popular BI tools for engineers who don\'t want to write code.', cat:'data', cl:'cd', lb:'Data Science', th:'📈', dt:'Jan 2025', rt:'7 min' },
+  { title:'pandas for civil engineers: reading lab data', ex:'Using pandas to automate reading and analysis of soil and concrete lab test results from Excel exports.', cat:'python', cl:'cd', lb:'Python', th:'🔬', dt:'Dec 2024', rt:'10 min' },
+];
+
+function renderBlog(f) {
+  const g = document.getElementById('blg');
+  if (!g) return;
+  const ps = f === 'all' ? posts : posts.filter(p => p.cat === f);
+  g.innerHTML = ps.map(p => `
+    <div class="bc">
+      <div class="bth"><span style="font-size:2.3rem">${p.th}</span></div>
+      <div class="bb">
+        <div class="bcat ${p.cl}">${p.lb}</div>
+        <div class="btl">${p.title}</div>
+        <div class="bex">${p.ex}</div>
+        <div class="bmt"><span>📅 ${p.dt}</span><span>⏱ ${p.rt} read</span></div>
+      </div>
+    </div>`).join('');
+  /* Staggered card entrance */
+  setTimeout(() => {
+    document.querySelectorAll('#blg .bc').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = `opacity .4s ${i * .055}s, transform .4s ${i * .055}s`;
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
+    });
+  }, 30);
+}
+
+function filt(f, btn) {
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderBlog(f);
+}
+
+/* ── INIT ── */
+setupPage('home');
+renderBlog('all');
+</script>
+</body>
+</html>
